@@ -1,16 +1,16 @@
 package com.Profiling.Profiling.model;
 
 public class Categorie {
-    private int idCategorie;
+    private int id;
     private String TitleCategorie;
     private ProfileCategorie profile;
 
     public int getIdCategorie() {
-        return idCategorie;
+        return id;
     }
 
     public void setIdCategorie(int idCategorie) {
-        this.idCategorie = idCategorie;
+        this.id = idCategorie;
     }
 
     public String getTitleCategorie() {
