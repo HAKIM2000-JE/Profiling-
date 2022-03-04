@@ -1,6 +1,15 @@
 package com.Profiling.Profiling.model;
 
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+
+@Document(collection = "ProfileReviews")
 public class ProfileReviews {
+
+    @Id
     private int id_reviews;
     private boolean isClickRecommendationCard ;
     private boolean isClickRecommendationMarker;
@@ -36,7 +45,7 @@ public class ProfileReviews {
     }
 
     public void setClickRecommendationWebsite(boolean clickRecommendationWebsite) {
-        isClickRecommendationWebsite = clickRecommendationWebsite;
+        this.isClickRecommendationWebsite = clickRecommendationWebsite;
     }
 
     public boolean isClickSyRendre() {
@@ -44,6 +53,6 @@ public class ProfileReviews {
     }
 
     public void setClickSyRendre(boolean clickSyRendre) {
-        isClickSyRendre = clickSyRendre;
+        this.isClickSyRendre = clickSyRendre;
     }
 }
