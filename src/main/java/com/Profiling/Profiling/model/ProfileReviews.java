@@ -1,20 +1,32 @@
 package com.Profiling.Profiling.model;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 
 
 @Document(collection = "ProfileReviews")
 public class ProfileReviews {
 
-    @Id
+
     private int id_reviews;
-    private boolean isClickRecommendationCard ;
-    private boolean isClickRecommendationMarker;
-    private boolean isClickRecommendationWebsite;
-    private boolean isClickSyRendre;
+    @Id
+    private Click click;
+    private int clickRecommendationCard ;
+    private int  clickRecommendationMarker;
+    private int clickRecommendationWebsite;
+    private int  clickSyRendre;
+
+    public ProfileReviews(int id_reviews, Click click,  int clickRecommendationCard, int clickRecommendationMarker, int clickRecommendationWebsite, int clickSyRendre) {
+        this.id_reviews = id_reviews;
+        this.click = click;
+        this.clickRecommendationCard = clickRecommendationCard;
+        this.clickRecommendationMarker = clickRecommendationMarker;
+        this.clickRecommendationWebsite = clickRecommendationWebsite;
+        this.clickSyRendre = clickSyRendre;
+    }
 
     public int getId_reviews() {
         return id_reviews;
@@ -24,35 +36,43 @@ public class ProfileReviews {
         this.id_reviews = id_reviews;
     }
 
-    public boolean isClickRecommendationCard() {
-        return isClickRecommendationCard;
+    public Click getClick() {
+        return click;
     }
 
-    public void setClickRecommendationCard(boolean clickRecommendationCard) {
-        isClickRecommendationCard = clickRecommendationCard;
+    public void setClick(Click click) {
+        this.click = click;
     }
 
-    public boolean isClickRecommendationMarker() {
-        return isClickRecommendationMarker;
+    public int getClickRecommendationCard() {
+        return clickRecommendationCard;
     }
 
-    public void setClickRecommendationMarker(boolean clickRecommendationMarker) {
-        isClickRecommendationMarker = clickRecommendationMarker;
+    public void setClickRecommendationCard(int clickRecommendationCard) {
+        this.clickRecommendationCard = clickRecommendationCard;
     }
 
-    public boolean isClickRecommendationWebsite() {
-        return isClickRecommendationWebsite;
+    public int getClickRecommendationMarker() {
+        return clickRecommendationMarker;
     }
 
-    public void setClickRecommendationWebsite(boolean clickRecommendationWebsite) {
-        this.isClickRecommendationWebsite = clickRecommendationWebsite;
+    public void setClickRecommendationMarker(int clickRecommendationMarker) {
+        this.clickRecommendationMarker = clickRecommendationMarker;
     }
 
-    public boolean isClickSyRendre() {
-        return isClickSyRendre;
+    public int getClickRecommendationWebsite() {
+        return clickRecommendationWebsite;
     }
 
-    public void setClickSyRendre(boolean clickSyRendre) {
-        this.isClickSyRendre = clickSyRendre;
+    public void setClickRecommendationWebsite(int clickRecommendationWebsite) {
+        this.clickRecommendationWebsite = clickRecommendationWebsite;
+    }
+
+    public int getClickSyRendre() {
+        return clickSyRendre;
+    }
+
+    public void setClickSyRendre(int clickSyRendre) {
+        this.clickSyRendre = clickSyRendre;
     }
 }

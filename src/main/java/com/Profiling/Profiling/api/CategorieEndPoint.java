@@ -21,9 +21,6 @@ public class CategorieEndPoint {
     public  void saveCategorie(@RequestBody Categorie categorie){
         categorieRepository.save(categorie);
         //return "Created Profile with id : " +  profile.getId();
-
-
-
     }
 
 

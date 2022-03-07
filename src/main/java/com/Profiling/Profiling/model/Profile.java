@@ -54,6 +54,8 @@ public class Profile {
 
     public String getSituation_familiale() {
         return situation_familiale;
+
+
     }
 
     public void setSituation_familiale(String situation_familiale) {
