@@ -4,6 +4,7 @@ package com.Profiling.Profiling.api;
 import com.Profiling.Profiling.model.Click;
 import com.Profiling.Profiling.model.ProfileReviews;
 import com.Profiling.Profiling.repository.ProfileReviewsRepository;
+import com.Profiling.Profiling.service.ClicksIncr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,9 @@ public class ClickEndpoint {
     public ProfileReviewsRepository profileReviewsRepository;
 
     public Optional<ProfileReviews> profileReviews;
+
+    @Autowired
+    public ClicksIncr clicksIncr;
 
 
 
@@ -50,33 +54,11 @@ public class ClickEndpoint {
 
         profileReviews = profileReviewsRepository.findById(click);
 
-
-        if(element.equals("RecommendationCard")) {
-            profileReviews.get().setClickRecommendationCard(profileReviews.get().getClickRecommendationCard()+1);
-            profileReviewsRepository.save(profileReviews.get());
-            return profileReviews;
-
-        }else if(element.equals("RecommendationMarker") ){
-            profileReviews.get().setClickRecommendationMarker(profileReviews.get().getClickRecommendationMarker() +1);
-            profileReviewsRepository.save(profileReviews.get());
-            return profileReviews;
+        clicksIncr.incrementClick(profileReviews , element);
 
 
-        }else  if(element.equals("RecommendationWebsite")){
-            profileReviews.get().setClickRecommendationWebsite(profileReviews.get().getClickRecommendationWebsite() +1);
-            profileReviewsRepository.save(profileReviews.get());
-            return profileReviews;
-
-
-        }else if(element.equals("SyRendre")) {
-            profileReviews.get().setClickSyRendre(profileReviews.get().getClickSyRendre()  +1);
-            profileReviewsRepository.save(profileReviews.get());
-            return profileReviews;
-
-        }else {
-
-            return profileReviews;
-        }
+        profileReviewsRepository.save(profileReviews.get());
+        return profileReviews;
 
 
 
