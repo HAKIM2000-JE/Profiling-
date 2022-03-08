@@ -54,7 +54,7 @@ public class ClickEndpoint {
 
         profileReviews = profileReviewsRepository.findById(click);
 
-        clicksIncr.incrementClick(profileReviews , element);
+        clicksIncr.incrementClick(profileReviews , element  );
 
 
         profileReviewsRepository.save(profileReviews.get());

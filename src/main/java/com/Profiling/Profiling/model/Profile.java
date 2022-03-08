@@ -11,36 +11,45 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Profile {
 
     @Id
-    private int id;
+    private String id;
     private int age;
     private String gendre;
-    private String situation_familiale;
+
     private String language;
     private int adults;
     private int pets;
     private int children;
-    private int bebes;
+    private int babies;
+    private int sofabeds;
+    private int singlebeds;
+    private int doublebeds;
+    private String startDate;
+    private String endDate;
     private ProfileReviews [] reviews;
     private Categorie [] categories;
     private ProfileTag [] tags;
 
-    public Profile(int id, int age, String situation_familiale, String language, int adults, int pets, int children, int bebes) {
+    public Profile(String id, int age, String gendre, String language, int adults, int pets, int children, int babies, int sofabeds, int singlebeds, int doublebeds, String startDate, String endDate) {
         this.id = id;
         this.age = age;
-        this.situation_familiale = situation_familiale;
+        this.gendre = gendre;
         this.language = language;
         this.adults = adults;
         this.pets = pets;
         this.children = children;
-        this.bebes = bebes;
+        this.babies = babies;
+        this.sofabeds = sofabeds;
+        this.singlebeds = singlebeds;
+        this.doublebeds = doublebeds;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -52,14 +61,61 @@ public class Profile {
         this.age = age;
     }
 
-    public String getSituation_familiale() {
-        return situation_familiale;
 
-
+    public String getGendre() {
+        return gendre;
     }
 
-    public void setSituation_familiale(String situation_familiale) {
-        this.situation_familiale = situation_familiale;
+    public void setGendre(String gendre) {
+        this.gendre = gendre;
+    }
+
+    public int getBabies() {
+        return babies;
+    }
+
+    public void setBabies(int babies) {
+        this.babies = babies;
+    }
+
+    public int getSofabeds() {
+        return sofabeds;
+    }
+
+    public void setSofabeds(int sofabeds) {
+        this.sofabeds = sofabeds;
+    }
+
+    public int getSinglebeds() {
+        return singlebeds;
+    }
+
+    public void setSinglebeds(int singlebeds) {
+        this.singlebeds = singlebeds;
+    }
+
+    public int getDoublebeds() {
+        return doublebeds;
+    }
+
+    public void setDoublebeds(int doublebeds) {
+        this.doublebeds = doublebeds;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public String getLanguage() {
@@ -95,11 +151,11 @@ public class Profile {
     }
 
     public int getBebes() {
-        return bebes;
+        return babies;
     }
 
     public void setBebes(int bebes) {
-        this.bebes = bebes;
+        this.babies = bebes;
     }
 
 
