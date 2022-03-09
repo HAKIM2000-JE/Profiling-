@@ -1,7 +1,9 @@
 package com.Profiling.Profiling.service;
 
 
+import com.Profiling.Profiling.model.ProfileCategorie;
 import com.Profiling.Profiling.model.ProfileReviews;
+import com.Profiling.Profiling.model.ProfileTag;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +39,15 @@ public class ClicksIncr {
 
     }
 
+
+    public void incrementClickCategorie(Optional<ProfileCategorie> profileCategorie){
+
+        profileCategorie.get().setClickOnCategorie(profileCategorie.get().getClickOnCategorie() +1);
+
+    }
+
+    public void incrementClickTag(Optional<ProfileTag> profileTag ){
+        profileTag.get().setClickOnTag(profileTag.get().getClickOnTag()+1);
+    }
 
 }

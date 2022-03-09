@@ -11,19 +11,20 @@ import com.Profiling.Profiling.repository.ProfileReviewsRepository;
 import com.Profiling.Profiling.repository.ReccommendationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+
 @RestController
+@CrossOrigin
 public class ProfileReviewsEndpoint {
 
      @Autowired
      public  ProfileReviewsRepository profileReviewsRepository;
+
+    public Optional<ProfileReviews> ExistingProfile;
 
 
 
@@ -36,9 +37,29 @@ public class ProfileReviewsEndpoint {
 
 
     @PostMapping("/ProfileReview")
-    public  String saveProfileReview(@RequestBody ProfileReviews profileReviews){
-        profileReviewsRepository.save(profileReviews);
-        return "Created Recommendation with id : " +  profileReviews.getClick() ;
+    public  ProfileReviews saveProfileReview(@RequestBody ProfileReviews profileReviews){
+
+         if(  profileReviewsRepository.findById(profileReviews.getClick()).isPresent() ){
+             System.out.println(profileReviews.getClick().getId_Recommendation());
+
+             System.out.println("ProfileReviews already exist ");
+             return profileReviews ;
+         }else {
+             profileReviewsRepository.save(profileReviews);
+             return profileReviews;
+         }
+
+
+
+         /*if(ExistingProfile.get().equals(null)){
+             profileReviewsRepository.save(profileReviews);
+             return "Created Recommendation with id : " +  profileReviews.getClick() ;
+
+         }else {
+             return "ProfileReviews already exist ";
+         }*/
+
+
 
 
 

@@ -1,22 +1,35 @@
 package com.Profiling.Profiling.model;
 
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "ProfileTag")
 public class ProfileTag {
-    private boolean isClickOnTag;
 
+    @Id
+    private   Click click;
 
-    public ProfileTag(boolean isClickOnTag) {
-        this.isClickOnTag = isClickOnTag;
+    private int clickOnTag;
+
+    public ProfileTag(Click click, int clickOnTag) {
+        this.click = click;
+        this.clickOnTag = clickOnTag;
     }
 
-    public boolean isClickOnTag() {
-        return isClickOnTag;
+    public Click getClick() {
+        return click;
     }
 
-    public void setClickOnTag(boolean clickOnTag) {
-        isClickOnTag = clickOnTag;
+    public void setClick(Click click) {
+        this.click = click;
+    }
+
+    public int getClickOnTag() {
+        return clickOnTag;
+    }
+
+    public void setClickOnTag(int clickOnTag) {
+        this.clickOnTag = clickOnTag;
     }
 }
