@@ -19,7 +19,7 @@ public class ProfileCategorieEndpoint {
     @PostMapping("/ProfileCategorie")
     public ProfileCategorie saveProfileCategory (@RequestBody ProfileCategorie profileCategorie){
         if(  profileCategorieRepository.findById(profileCategorie.getClick()).isPresent() ){
-            System.out.println(profileCategorie.getClick().getId_Recommendation());
+
 
             System.out.println("ProfileTag already exist");
             return profileCategorie ;

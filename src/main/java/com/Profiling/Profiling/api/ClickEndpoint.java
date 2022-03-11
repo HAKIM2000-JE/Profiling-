@@ -1,10 +1,7 @@
 package com.Profiling.Profiling.api;
 
 
-import com.Profiling.Profiling.model.Click;
-import com.Profiling.Profiling.model.ProfileCategorie;
-import com.Profiling.Profiling.model.ProfileReviews;
-import com.Profiling.Profiling.model.ProfileTag;
+import com.Profiling.Profiling.model.*;
 import com.Profiling.Profiling.repository.ProfileCategorieRepository;
 import com.Profiling.Profiling.repository.ProfileReviewsRepository;
 import com.Profiling.Profiling.repository.ProfileTagRepository;
@@ -70,7 +67,7 @@ public class ClickEndpoint {
     }
 
     @PostMapping("/newClickCategorie")
-    public Optional<ProfileCategorie> addCategorie(@RequestBody Click click){
+    public Optional<ProfileCategorie> addCategorie(@RequestBody ClickCategorie click){
         profileCategorie = profileCategorieRepository.findById(click);
 
         clicksIncr.incrementClickCategorie(profileCategorie);

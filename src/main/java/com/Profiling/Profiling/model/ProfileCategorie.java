@@ -8,21 +8,21 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProfileCategorie {
 
     @Id
-    private Click click;
+    private ClickCategorie click;
     // should we add categorie content here ?
     private  int clickOnCategorie;
 
 
-    public ProfileCategorie(Click click, int clickOnCategorie) {
+    public ProfileCategorie(ClickCategorie click, int clickOnCategorie) {
         this.click = click;
         this.clickOnCategorie = clickOnCategorie;
     }
 
-    public Click getClick() {
+    public ClickCategorie getClick() {
         return click;
     }
 
-    public void setClick(Click click) {
+    public void setClick(ClickCategorie click) {
         this.click = click;
     }
 
