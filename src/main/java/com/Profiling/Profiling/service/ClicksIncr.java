@@ -13,24 +13,24 @@ import java.util.Optional;
 public class ClicksIncr {
 
 
-    public void  incrementClick(Optional<ProfileReviews> profileReviews , String element){
+    public void  incrementClick(ProfileReviews profileReviews , String element){
 
 
         if(element.equals("RecommendationCard")) {
-            profileReviews.get().setClickRecommendationCard(profileReviews.get().getClickRecommendationCard()+1);
+            profileReviews.setClickRecommendationCard(profileReviews.getClickRecommendationCard()+1);
 
 
         }else if(element.equals("RecommendationMarker") ){
-            profileReviews.get().setClickRecommendationMarker(profileReviews.get().getClickRecommendationMarker() +1);
+            profileReviews.setClickRecommendationMarker(profileReviews.getClickRecommendationMarker() +1);
 
 
         }else  if(element.equals("RecommendationWebsite")){
-            profileReviews.get().setClickRecommendationWebsite(profileReviews.get().getClickRecommendationWebsite() +1);
+            profileReviews.setClickRecommendationWebsite(profileReviews.getClickRecommendationWebsite() +1);
 
 
 
         }else if(element.equals("SyRendre")) {
-            profileReviews.get().setClickSyRendre(profileReviews.get().getClickSyRendre()  +1);
+            profileReviews.setClickSyRendre(profileReviews.getClickSyRendre()  +1);
 
 
         }
@@ -40,14 +40,14 @@ public class ClicksIncr {
     }
 
 
-    public void incrementClickCategorie(Optional<ProfileCategorie> profileCategorie){
+    public void incrementClickCategorie(ProfileCategorie profileCategorie){
 
-        profileCategorie.get().setClickOnCategorie(profileCategorie.get().getClickOnCategorie() +1);
+        profileCategorie.setClickOnCategorie(profileCategorie.getClickOnCategorie() +1);
 
     }
 
-    public void incrementClickTag(Optional<ProfileTag> profileTag ){
-        profileTag.get().setClickOnTag(profileTag.get().getClickOnTag()+1);
+    public void incrementClickTag(ProfileTag profileTag ){
+        profileTag.setClickOnTag(profileTag.getClickOnTag()+1);
     }
 
 }

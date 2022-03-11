@@ -4,7 +4,7 @@ package com.Profiling.Profiling.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "ProfileCategorie")
+@Document(collection = "GuestCategorie")
 public class ProfileCategorie {
 
     @Id

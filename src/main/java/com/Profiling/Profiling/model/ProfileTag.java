@@ -4,24 +4,24 @@ package com.Profiling.Profiling.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "ProfileTag")
+@Document(collection = "GuestTag")
 public class ProfileTag {
 
     @Id
-    private   Click click;
+    private   ClikcTag click;
 
     private int clickOnTag;
 
-    public ProfileTag(Click click, int clickOnTag) {
+    public ProfileTag(ClikcTag click, int clickOnTag) {
         this.click = click;
         this.clickOnTag = clickOnTag;
     }
 
-    public Click getClick() {
+    public ClikcTag getClick() {
         return click;
     }
 
-    public void setClick(Click click) {
+    public void setClick(ClikcTag click) {
         this.click = click;
     }
 
