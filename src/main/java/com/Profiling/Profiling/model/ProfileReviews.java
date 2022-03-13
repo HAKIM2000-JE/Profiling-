@@ -18,14 +18,16 @@ public class ProfileReviews {
     private int  clickRecommendationMarker;
     private int clickRecommendationWebsite;
     private int  clickSyRendre;
+    private boolean clickNavigation;
 
-    public ProfileReviews(int id_reviews, Click click,  int clickRecommendationCard, int clickRecommendationMarker, int clickRecommendationWebsite, int clickSyRendre) {
+    public ProfileReviews(int id_reviews, Click click,  int clickRecommendationCard, int clickRecommendationMarker, int clickRecommendationWebsite, int clickSyRendre  , boolean clickNavigation) {
         this.id_reviews = id_reviews;
         this.click = click;
         this.clickRecommendationCard = clickRecommendationCard;
         this.clickRecommendationMarker = clickRecommendationMarker;
         this.clickRecommendationWebsite = clickRecommendationWebsite;
         this.clickSyRendre = clickSyRendre;
+        this.clickNavigation= clickNavigation;
     }
 
     public int getId_reviews() {
@@ -74,5 +76,13 @@ public class ProfileReviews {
 
     public void setClickSyRendre(int clickSyRendre) {
         this.clickSyRendre = clickSyRendre;
+    }
+
+    public boolean isClickNavigation() {
+        return clickNavigation;
+    }
+
+    public void setClickNavigation(boolean clickNavigation) {
+        this.clickNavigation = clickNavigation;
     }
 }

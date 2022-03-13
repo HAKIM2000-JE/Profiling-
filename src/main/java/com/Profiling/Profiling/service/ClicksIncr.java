@@ -34,6 +34,9 @@ public class ClicksIncr {
 
 
         }
+        else if (element.equals("Navigation")){
+            profileReviews.setClickNavigation(true);
+        }
 
 
 
