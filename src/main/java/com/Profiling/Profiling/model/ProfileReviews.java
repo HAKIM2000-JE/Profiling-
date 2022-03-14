@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProfileReviews {
 
 
-    private int id_reviews;
+
     @Id
     private Click click;
     private int clickRecommendationCard ;
@@ -19,24 +19,30 @@ public class ProfileReviews {
     private int clickRecommendationWebsite;
     private int  clickSyRendre;
     private boolean clickNavigation;
+    private boolean isLike;
 
-    public ProfileReviews(int id_reviews, Click click,  int clickRecommendationCard, int clickRecommendationMarker, int clickRecommendationWebsite, int clickSyRendre  , boolean clickNavigation) {
-        this.id_reviews = id_reviews;
+    public ProfileReviews( Click click,  int clickRecommendationCard, int clickRecommendationMarker, int clickRecommendationWebsite, int clickSyRendre  , boolean clickNavigation , boolean isLike) {
+
         this.click = click;
         this.clickRecommendationCard = clickRecommendationCard;
         this.clickRecommendationMarker = clickRecommendationMarker;
         this.clickRecommendationWebsite = clickRecommendationWebsite;
         this.clickSyRendre = clickSyRendre;
         this.clickNavigation= clickNavigation;
+        this.isLike = isLike;
     }
 
-    public int getId_reviews() {
-        return id_reviews;
+
+
+    public boolean isLike() {
+        return isLike;
     }
 
-    public void setId_reviews(int id_reviews) {
-        this.id_reviews = id_reviews;
+    public void setLike(boolean like) {
+        isLike = like;
     }
+
+
 
     public Click getClick() {
         return click;

@@ -3,7 +3,7 @@ package com.Profiling.Profiling.api;
 
 import com.Profiling.Profiling.model.ProfileCategorie;
 import com.Profiling.Profiling.repository.ProfileCategorieRepository;
-import com.Profiling.Profiling.service.ClicksIncr;
+import com.Profiling.Profiling.service.ClickIncrement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,20 +23,20 @@ public class ProfileCategorieEndpoint {
 
 
     @Autowired
-    public ClicksIncr clicksIncr;
+    public ClickIncrement clickIncrement;
 
     @PostMapping("/ProfileCategorie")
     public ProfileCategorie saveProfileCategory (@RequestBody ProfileCategorie profileCategorie){
         if(  profileCategorieRepository.findById(profileCategorie.getClick()).isPresent() ){
 
              ExistingProfileCategorie= profileCategorieRepository.findById(profileCategorie.getClick());
-             clicksIncr.incrementClickCategorie(ExistingProfileCategorie.get());
+             clickIncrement.incrementClickCategorie(ExistingProfileCategorie.get());
              profileCategorieRepository.save(ExistingProfileCategorie.get());
 
 
             return ExistingProfileCategorie.get() ;
         }else {
-            clicksIncr.incrementClickCategorie(profileCategorie);
+            clickIncrement.incrementClickCategorie(profileCategorie);
             profileCategorieRepository.save(profileCategorie);
             return profileCategorie;
         }

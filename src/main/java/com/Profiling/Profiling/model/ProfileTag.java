@@ -8,20 +8,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProfileTag {
 
     @Id
-    private   ClikcTag click;
+    private ClickTag click;
 
     private int clickOnTag;
 
-    public ProfileTag(ClikcTag click, int clickOnTag) {
+    public ProfileTag(ClickTag click, int clickOnTag) {
         this.click = click;
         this.clickOnTag = clickOnTag;
     }
 
-    public ClikcTag getClick() {
+    public ClickTag getClick() {
         return click;
     }
 
-    public void setClick(ClikcTag click) {
+    public void setClick(ClickTag click) {
         this.click = click;
     }
 

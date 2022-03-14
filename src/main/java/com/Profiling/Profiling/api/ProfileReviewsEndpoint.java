@@ -4,10 +4,10 @@ package com.Profiling.Profiling.api;
 
 import com.Profiling.Profiling.model.ProfileReviews;
 import com.Profiling.Profiling.repository.ProfileReviewsRepository;
-import com.Profiling.Profiling.service.ClicksIncr;
+import com.Profiling.Profiling.service.ClickIncrement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
+
 import java.util.Optional;
 
 
@@ -20,7 +20,7 @@ public class ProfileReviewsEndpoint {
 
 
     @Autowired
-    public ClicksIncr clicksIncr;
+    public ClickIncrement clickIncrement;
 
 
 
@@ -35,12 +35,12 @@ public class ProfileReviewsEndpoint {
         if(  profileReviewsRepository.findById(profileReviews.getClick()).isPresent() ){
              //we have to increment click
             ExistingProfileReviews = profileReviewsRepository.findById( profileReviews.getClick() );
-            clicksIncr.incrementClick(ExistingProfileReviews.get() , element  );
+            clickIncrement.incrementClick(ExistingProfileReviews.get() , element  );
             profileReviewsRepository.save(ExistingProfileReviews.get());
 
             return ExistingProfileReviews.get() ;
         }else {
-            clicksIncr.incrementClick(profileReviews , element  );
+            clickIncrement.incrementClick(profileReviews , element  );
             profileReviewsRepository.save(profileReviews);
             return profileReviews;
         }

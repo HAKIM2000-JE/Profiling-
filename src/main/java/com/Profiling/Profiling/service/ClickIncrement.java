@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Component
-public class ClicksIncr {
+public class ClickIncrement {
 
 
     public void  incrementClick(ProfileReviews profileReviews , String element){
@@ -36,6 +36,9 @@ public class ClicksIncr {
         }
         else if (element.equals("Navigation")){
             profileReviews.setClickNavigation(true);
+
+        } else  if (element.equals("Like")){
+            profileReviews.setLike(true);
         }
 
 

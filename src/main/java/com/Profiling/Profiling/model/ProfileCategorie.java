@@ -9,7 +9,7 @@ public class ProfileCategorie {
 
     @Id
     private ClickCategorie click;
-    // should we add categorie content here ?
+
     private  int clickOnCategorie;
 
 
